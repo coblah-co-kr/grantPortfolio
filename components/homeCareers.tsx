@@ -12,7 +12,7 @@ export default function HomeCareers () {
                     <div className="col-span-2 hansans text-3xl mb-5">
                         한국전자기술연구원
                     </div>
-                    <div className="col-span-2 nanum-gothic font-bold text-lg divide-y-2">
+                    <div className="col-span-2 font-bold text-lg divide-y-2">
                         소프트웨어 개발 (2019.08 ~ 2021.7)
                     </div>
                     <ul className="col-span-2 list-disc list-inside nanum-square">
@@ -23,7 +23,7 @@ export default function HomeCareers () {
                             성과 : 연산시간 3배 단축
                         </li>
                     </ul>
-                    <div className="col-span-2 nanum-gothic font-bold text-lg divide-y-2">
+                    <div className="col-span-2 font-bold text-lg divide-y-2">
                         머신러닝을 이용한 데이터 분류 및 교정 (2020.06 ~ 2021.7)
                     </div>
                     <ul className="col-span-2 list-disc list-inside nanum-square">
@@ -40,7 +40,7 @@ export default function HomeCareers () {
                     <div className="col-span-2 hansans text-3xl mb-5 mt-5">
                         컬리지니에이아이
                     </div>
-                    <div className="col-span-2 nanum-gothic font-bold text-lg divide-y-2">
+                    <div className="col-span-2 font-bold text-lg divide-y-2">
                         자연어 처리 모델 개발 (2021.07 ~ 2022.1)
                     </div>
                     <ul className="col-span-2 list-disc list-inside nanum-square">
@@ -51,7 +51,7 @@ export default function HomeCareers () {
                             성과 : 적용 대비 연산시간 20%로 단축
                         </li>
                     </ul>
-                    <div className="col-span-2 nanum-gothic font-bold text-lg divide-y-2">
+                    <div className="col-span-2 font-bold text-lg divide-y-2">
                         백엔드 개발 (2022.01 ~ )
                     </div>
                     <ul className="col-span-2 list-disc list-inside nanum-square">

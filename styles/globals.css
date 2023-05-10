@@ -24,13 +24,6 @@
 }
 
 @font-face {
-  font-family: 'NanumGothic';
-  src: url('/fonts/nanum-gothic/NanumGothic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'NanumSquare';
   src: url('/fonts/nanum-square/NanumSquareB.ttf') format('truetype');
   font-weight: normal;
@@ -46,10 +39,6 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-}
-
-.nanum-gothic {
-  font-family: 'NanumGothic', sans-serif;
 }
 
 .nanum-square {

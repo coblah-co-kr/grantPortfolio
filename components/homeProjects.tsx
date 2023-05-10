@@ -62,7 +62,7 @@ export default function HomeProjects () {
             {projectTitle("Portfolio <2023.05~>")}
             {projectSubTitle("개인 포트폴리오")}
             {projectImgUrl(portfolioImageList, portfolioImageIndex, setPortfolioImageIndex)}
-            <div className="nanum-gothic text-sm mb-5">
+            <div className="text-sm mb-5">
                 지속적인 포트폴리오의 관리를 위해 지금 보고 계신 포트폴리오를 개발했습니다.<br/>
                 구글링중에 우연히 발견한 <Link href="https://cdg-portfolio.com/" className="text-teal-500 font-bold">최덕경님의 포트폴리오</Link>의 디자인을 참고했습니다.
             </div>
@@ -96,7 +96,7 @@ export default function HomeProjects () {
             {projectTitle("결사단 <2023.04~>")}
             {projectSubTitle("블로그 서비스")}
             {projectImgUrl(ruftkeksImageList, ruftkeksImageIndex, setRuftkeksImageIndex)}
-            <div className="nanum-gothic text-sm mb-5">
+            <div className="text-sm mb-5">
                 오랜 친구들과 추억을 저장하기 위해 블로그를 만들고 있습니다.<br/>
                 Springboot, Next.js, Redux 등의 기술스택의 향상을 목표로 합니다.<br/>
             </div>
@@ -143,7 +143,7 @@ export default function HomeProjects () {
             {projectTitle("공시록 <2023.01~2023.03>")}
             {projectSubTitle("실시간 공시 알림 서비스")}
             {projectImgUrl(noticelogImageList, noticelogImageIndex, setNoticelogImageIndex)}
-            <div className="nanum-gothic text-sm mb-5">
+            <div className="text-sm mb-5">
                 앱 개발자인 친동생과 함께 만든 서비스입니다.<br/>
                 외주를 위탁한 디자인을 제외하고 기획부터 앱 배포까지 온전히 수행한데서 의미가 있습니다.<br/>
                 공시록은 이슈만 관리하며 운영중이며, 다른 프로젝트들을 진행중입니다.
