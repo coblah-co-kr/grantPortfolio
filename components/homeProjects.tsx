@@ -83,7 +83,7 @@ export default function HomeProjects () {
                     성과
                 </li>
                 <li className="col-span-3 flex flex-row justify-around mt-1">
-                    <Link href="https://github.com/coblah-co-kr/ruftkeks_springboot" className="text-xs">
+                    <Link href="https://github.com/coblah-co-kr/grantPortfolio" className="text-xs">
                         <img src="icons/git.png" alt="" style={{display:"block", margin:"0 auto"}}/>
                     </Link>
                 </li>
