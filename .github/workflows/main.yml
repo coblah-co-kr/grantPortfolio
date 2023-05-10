@@ -1,0 +1,113 @@
+name: Build And Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse Jira Keys from Commit
+        id: jira_keys
+        if: always()
+        uses: HighwayThree/jira-extract-issue-keys@master
+        with:
+          is-pull-request: ${{ github.event_name == 'pull_request' }}
+          parse-all-commits: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Confirm Deploy State and Jira Key Values
+        if: always()
+        run: |
+          echo "BUILD_STATE=successful" >> $GITHUB_ENV
+          echo "Jira Keys: ${{steps.jira_keys.outputs.jira-keys}}"
+      - name: Failed Build
+        if: failure()
+        run: echo "BUILD_STATE=failed" >> $GITHUB_ENV
+
+      - name: Push Build Info to Jira
+        if: steps.jira_keys.outputs.jira-keys != ''
+        uses: rohit-gohri/jira-ci-cd-integration@v0
+        with:
+          state: ${{ env.BUILD_STATE }}
+          issue: "${{ steps.jira_keys.outputs.jira-keys }}"
+          jira_instance: coblah
+          client_id: ${{ secrets.JIRA_CLIENT_ID }}
+          client_secret: ${{ secrets.JIRA_CLIENT_SECRET }}
+
+  jira_dev_deployment:
+    name: Jira Dev Deployment
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' &&  github.ref == 'refs/heads/dev'
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Parse Jira Keys from All Commits
+        id: jira_keys
+        if: always()
+        uses: HighwayThree/jira-extract-issue-keys@master
+        with:
+          is-pull-request: ${{ github.event_name == 'pull_request' }}
+          parse-all-commits: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Confirm Deploy State and Jira Key Values
+        if: always()
+        run: |
+          echo "BUILD_STATE=successful" >> $GITHUB_ENV
+          echo "Jira Keys: ${{steps.jira_keys.outputs.jira-keys}}"
+      - name: Failed Build
+        if: failure()
+        run: echo "BUILD_STATE=failed" >> $GITHUB_ENV
+
+      - name: Push Deployment Info to Jira
+        if: steps.jira_keys.outputs.jira-keys != ''
+        uses: rohit-gohri/jira-ci-cd-integration@v0
+        with:
+          state: ${{ env.BUILD_STATE }}
+          environment: dev
+          issue: "${{ steps.jira_keys.outputs.jira-keys }}"
+          jira_instance: coblah
+          client_id: ${{ secrets.JIRA_CLIENT_ID }}
+          client_secret: ${{ secrets.JIRA_CLIENT_SECRET }}
+
+  jira_prod_deployment:
+    name: Jira Prod Deployment
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' &&  github.ref == 'refs/heads/main'
+    steps:
+      - name: Parse Jira Keys from All Commits
+        id: jira_keys
+        if: always()
+        uses: HighwayThree/jira-extract-issue-keys@master
+        with:
+          is-pull-request: ${{ github.event_name == 'pull_request' }}
+          parse-all-commits: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Confirm Deploy State and Jira Key Values
+        if: always()
+        run: |
+          echo "BUILD_STATE=successful" >> $GITHUB_ENV
+          echo "Jira Keys: ${{steps.jira_keys.outputs.jira-keys}}"
+      - name: Failed Build
+        if: failure()
+        run: echo "BUILD_STATE=failed" >> $GITHUB_ENV
+
+      - name: Push Deployment Info to Jira
+        if: steps.jira_keys.outputs.jira-keys != ''
+        uses: rohit-gohri/jira-ci-cd-integration@v0
+        with:
+          state: ${{ env.BUILD_STATE }}
+          environment: production
+          issue: "${{ steps.jira_keys.outputs.jira-keys }}"
+          jira_instance: coblah
+          client_id: ${{ secrets.JIRA_CLIENT_ID }}
+          client_secret: ${{ secrets.JIRA_CLIENT_SECRET }}

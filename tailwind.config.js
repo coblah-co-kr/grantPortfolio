@@ -6,6 +6,11 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      'NanumGothic' : ['NanumGothic', 'sans-serif'],
+      'KarGugSu': ['NanumKarGugSu', 'sans-serif'],
+      'NanumSquare': ['NanumSquareB', 'sans-serif'],
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -15,4 +20,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

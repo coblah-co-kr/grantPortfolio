@@ -16,12 +16,50 @@
   }
 }
 
+@font-face {
+  font-family: 'KarGugSu';
+  src: url('/fonts/NanumKarGugSu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('/fonts/nanum-gothic/NanumGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  src: url('/fonts/nanum-square/NanumSquareB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HanSans';
+  src: url('/fonts/Black_Han_Sans/BlackHanSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+.nanum-gothic {
+  font-family: 'NanumGothic', sans-serif;
+}
+
+.nanum-square {
+  font-family: 'NanumSquare', sans-serif;
+}
+
+.kargugsu {
+  font-family: 'KarGugSu', sans-serif;
+}
+
+.hansans {
+  font-family: 'HanSans', sans-serif;
 }
