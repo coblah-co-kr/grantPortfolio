@@ -54,7 +54,7 @@ class titleShell extends htmlShell {
 
 export default function HomeTitle() {
     const ts = new titleShell(
-        "bg-slate-600 text-white py-20",
+        "bg-slate-600 text-white py-20 snap-start",
         "max-w-[48rem] mx-auto h-auto grid justify-items-center"
     );
     return ts.getContent();

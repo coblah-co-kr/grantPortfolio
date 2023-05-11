@@ -71,7 +71,7 @@ abstract class projectScript {
     }
     private setProjectTitle() {
         return (
-            <div className="hansans text-3xl mb-1 ">
+            <div className="hansans text-3xl mb-1">
                 { this.titleName }
             </div>
         );
@@ -275,7 +275,7 @@ export default function HomeProjects () {
     const [noticelogImageIndex, setNoticelogImageIndex] = useState(0);
 
     const ps = new projectShell(
-        "bg-grantProject text-white",
+        "bg-grantProject text-white snap-start",
         "max-w-[48rem] mx-auto h-auto grid justify-items-center",
         new portfolioScript(
             "Portfolio <2023.05~>",

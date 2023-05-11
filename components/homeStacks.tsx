@@ -96,7 +96,7 @@ class stackScript extends htmlShell {
 export default function HomeStacks() {
   const [imgDescription, setImgDescription] = useState("");
   const ss = new stackScript(
-    "bg-grantStack",
+    "bg-grantStack snap-start",
     "max-w-[48rem] mx-auto h-auto grid justify-items-center",
     imgDescription,
     setImgDescription
