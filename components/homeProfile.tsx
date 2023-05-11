@@ -5,7 +5,7 @@ export default function HomeProfile() {
           <div className="hansans text-5xl my-20">
             Profile
           </div>
-          <div className="grid grid-cols-3 gap-x-32 gap-y-10 mb-20">
+          <div className="grid grid-cols-3 gap-x-10 gap-y-10 mb-20">
             <div className="flex flex-row">
               <div className="basis-1/3 mr-2">
                 <img src="icons/school.png" alt="" />
