@@ -17,6 +17,11 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        grantStack: '#fbbf24',
+        grantProject: '#8b5cf6',
+        grantCareer: '#0d9488',
+      },
     },
   },
   plugins: [],

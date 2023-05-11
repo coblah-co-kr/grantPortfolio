@@ -67,8 +67,8 @@ class stackScript extends htmlShell {
   }
   addBlock(blockTitle:string, stackList:Array<string>, spanRow?:string):ReactElement {
     return (
-      <div className={"rounded-xl bg-white p-7 w-80 mx-5 shadow-2xl hover:shadow-indigo-700 ".concat(spanRow? spanRow: "")}>
-          <div className="grid grid-cols-1 divide-y-2 divide-indigo-700">
+      <div className={"rounded-xl bg-white p-7 w-80 mx-5 shadow-2xl hover:shadow-grantProject ".concat(spanRow? spanRow: "")}>
+          <div className="grid grid-cols-1 divide-y-2 divide-grantProject">
               {this.setBlockTitle(blockTitle)}
               <div className="flex flex-col">
                 {stackList.map((stack, index) => this.setBlockComponent(stack, index))}
@@ -79,7 +79,7 @@ class stackScript extends htmlShell {
   }
   setBlockTitle(titleName: string):ReactElement {
     return (
-      <div className="text-2xl text-indigo-700 font-bold mb-2">
+      <div className="text-2xl text-grantProject font-bold mb-2">
         {titleName}
       </div>
     );
@@ -96,7 +96,7 @@ class stackScript extends htmlShell {
 export default function HomeStacks() {
   const [imgDescription, setImgDescription] = useState("");
   const ss = new stackScript(
-    "bg-amber-400",
+    "bg-grantStack",
     "max-w-[48rem] mx-auto h-auto grid justify-items-center",
     imgDescription,
     setImgDescription

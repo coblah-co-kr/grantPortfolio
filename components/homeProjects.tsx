@@ -71,7 +71,7 @@ abstract class projectScript {
     }
     private setProjectTitle() {
         return (
-            <div className="hansans text-3xl mb-1">
+            <div className="hansans text-3xl mb-1 ">
                 { this.titleName }
             </div>
         );
@@ -138,10 +138,10 @@ class noticelogScript extends projectScript {
                 </div>
                 <ul className="grid grid-cols-5 nanum-square">
                     <li className="col-span-2 mb-5">
-                        팀 구성 및 <p className="underline decoration-2 decoration-teal-500">역할</p>
+                        팀 구성 및 <p className="underline decoration-2 decoration-grantCareer">역할</p>
                     </li>
                     <li className="col-span-3">
-                        앱 개발 1, 디자인 1, <a className="underline decoration-2 decoration-teal-500">백엔드 개발 1</a>
+                        앱 개발 1, 디자인 1, <a className="underline decoration-2 decoration-grantCareer">백엔드 개발 1</a>
                     </li>
                     <li className="col-span-2 row-span-4 mt-8">
                         내용
@@ -188,10 +188,10 @@ class ruftkeksScript extends projectScript {
                 </div>
                 <ul className="grid grid-cols-5 nanum-square">
                     <li className="col-span-2 mb-5">
-                        팀 구성 및 <a className="underline decoration-2 decoration-teal-500">역할</a>
+                        팀 구성 및 <a className="underline decoration-2 decoration-grantCareer">역할</a>
                     </li>
                     <li className="col-span-3">
-                        <a className="underline decoration-2 decoration-teal-500">백엔드 개발 1, 프론트 개발 1</a>
+                        <a className="underline decoration-2 decoration-grantCareer">백엔드 개발 1, 프론트 개발 1</a>
                     </li>
                     <li className="col-span-2 row-span-1">
                         내용
@@ -236,14 +236,14 @@ class portfolioScript extends projectScript {
             <>
                 <div className="text-sm mb-5">
                     지속적인 포트폴리오의 관리를 위해 지금 보고 계신 포트폴리오를 개발했습니다.<br/>
-                    구글링중에 우연히 발견한 <Link href="https://cdg-portfolio.com/" className="text-teal-500 font-bold">최덕경님의 포트폴리오</Link>의 디자인을 참고했습니다.
+                    구글링중에 우연히 발견한 <Link href="https://cdg-portfolio.com/" className="text-grantCareer font-bold">최덕경님의 포트폴리오</Link>의 디자인을 참고했습니다.
                 </div>
                 <ul className="grid grid-cols-5 nanum-square">
                     <li className="col-span-2 mb-5">
-                        팀 구성 및 <a className="underline decoration-2 decoration-teal-500">역할</a>
+                        팀 구성 및 <a className="underline decoration-2 decoration-grantCareer">역할</a>
                     </li>
                     <li className="col-span-3">
-                        <a className="underline decoration-2 decoration-teal-500">프론트 개발 1</a>
+                        <a className="underline decoration-2 decoration-grantCareer">프론트 개발 1</a>
                     </li>
                     <li className="col-span-2 row-span-1">
                         내용
@@ -275,7 +275,7 @@ export default function HomeProjects () {
     const [noticelogImageIndex, setNoticelogImageIndex] = useState(0);
 
     const ps = new projectShell(
-        "bg-violet-500 text-white",
+        "bg-grantProject text-white",
         "max-w-[48rem] mx-auto h-auto grid justify-items-center",
         new portfolioScript(
             "Portfolio <2023.05~>",

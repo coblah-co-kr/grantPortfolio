@@ -1,6 +1,6 @@
 export default function HomeCareers () {
     return (
-        <div className="bg-teal-500 text-white">
+        <div className="bg-grantCareer text-white">
             <div className="max-w-[48rem] mx-auto h-auto grid justify-items-center gap-y-10 pb-20">
                 <div className="hansans text-5xl my-20">
                     Careers
