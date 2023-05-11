@@ -1,10 +1,21 @@
-export default function HomeCareers () {
-    return (
-        <div className="bg-teal-500 text-white">
-            <div className="max-w-[48rem] mx-auto h-auto grid justify-items-center gap-y-10 pb-20">
-                <div className="hansans text-5xl my-20">
-                    Careers
-                </div>
+import { htmlShell } from "./htmlShell";
+
+class careerShell extends htmlShell {
+    constructor(themeCode:string, frameCode:string) {
+        super(themeCode, frameCode);
+    }
+
+    getContent() {
+        return (
+            <div className={this.themeCode}>
+                {this.content()}
+            </div>
+        );
+    }
+    content() {
+        return (
+            <div className={this.frameCode}>
+                {this.title()}
                 <div className="grid grid-cols-3 grid-flow-row gap-4">
                     <div className="col-span-1 row-span-5 hansans text-xl">
                         2019.08 ~ 2021.07
@@ -64,6 +75,21 @@ export default function HomeCareers () {
                     </ul>
                 </div>
             </div>
-        </div>
+        );
+    }
+    title() {
+        return (
+            <div className="hansans text-5xl my-20">
+                Careers
+            </div>
+        );
+    }
+}
+
+export default function HomeCareers () {
+    const cs = new careerShell(
+        "bg-grantCareer text-white snap-start",
+        "max-w-[48rem] mx-auto h-auto grid justify-items-center gap-y-10 pb-20"
     );
+    return cs.getContent();
 }

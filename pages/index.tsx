@@ -19,7 +19,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobile]);
   return (
-    <div className={isMobile? "w-fit":""}>
+    <div className={isMobile? "w-fit snap-y":"snap-y"}>
       <Seo subtitle="Home"/>
       <HomeTitle />
       <HomeProfile />

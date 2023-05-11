@@ -88,7 +88,7 @@ export default function Modal ({ imgDescription, setImgDescription } : ModalInte
     return (
         <div className={styles.overlay} style={{ display: imgDescription !== "" ? "block" : "none" }}>
             <div className={styles.modal}>
-                <div className="mx-2 mt-2 text-3xl font-bold capitalize text-indigo-700">
+                <div className="mx-2 mt-2 text-3xl font-bold capitalize text-grantProject">
                     {imgDescription}
                 </div>
                 <div className="mx-2 mb-2 mt-5 hansans text-xl">

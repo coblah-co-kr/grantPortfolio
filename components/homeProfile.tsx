@@ -62,7 +62,7 @@ class profileShell extends htmlShell {
 
 export default function HomeProfile() {
   const ps = new profileShell(
-    "bg-white text-black py-10",
+    "bg-white text-black py-10 snap-start",
     "max-w-[48rem] mx-auto h-auto grid justify-items-center"
   );
   return ps.getContent();
