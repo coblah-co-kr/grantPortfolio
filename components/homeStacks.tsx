@@ -39,7 +39,7 @@ class stackScript extends htmlShell {
                 )}
                 {this.addBlock(
                   "Deployment", 
-                  ["aws", "dockercompose", "gitaction", "jenkins"], 
+                  ["aws", "dockercompose", "gitaction", "jenkins", "vercel"], 
                   "row-span-2", 
                 )}
                 {this.addBlock(
