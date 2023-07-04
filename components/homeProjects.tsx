@@ -235,7 +235,7 @@ class portfolioScript extends projectScript {
             <>
                 <div className="text-sm mb-5">
                     지속적인 포트폴리오의 관리를 위해 지금 보고 계신 포트폴리오를 개발했습니다.<br/>
-                    구글링중에 우연히 발견한 <Link href="https://cdg-portfolio.com/" className="text-grantCareer font-bold">최덕경님의 포트폴리오</Link>의 디자인을 참고했습니다.
+                    구글링중에 우연히 발견한 <Link href="https://cdg-portfolio.com/" className="text-grantCareer font-bold">최덕경님의 포트폴리오</Link>의 디자인을 참고했습니다.<br/>
                     디자인 사용에 대한 허가를 받았으며, 지속적으로 업데이트할 계획입니다.
                 </div>
                 <ul className="grid grid-cols-5 nanum-square">
