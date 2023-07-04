@@ -132,9 +132,8 @@ class noticelogScript extends projectScript {
         return (
             <>
                 <div className="text-sm mb-5">
-                    앱 개발자인 친동생과 함께 만든 서비스입니다.<br/>
+                    현재는 서비스를 종료했지만, 앱 개발자인 친동생과 함께 만든 서비스입니다.<br/>
                     외주를 위탁한 디자인을 제외하고 기획부터 앱 배포까지 온전히 수행한데서 의미가 있습니다.<br/>
-                    공시록은 이슈만 관리하며 운영중이며, 다른 프로젝트들을 진행중입니다.
                 </div>
                 <ul className="grid grid-cols-5 nanum-square">
                     <li className="col-span-2 mb-5">
@@ -237,6 +236,7 @@ class portfolioScript extends projectScript {
                 <div className="text-sm mb-5">
                     지속적인 포트폴리오의 관리를 위해 지금 보고 계신 포트폴리오를 개발했습니다.<br/>
                     구글링중에 우연히 발견한 <Link href="https://cdg-portfolio.com/" className="text-grantCareer font-bold">최덕경님의 포트폴리오</Link>의 디자인을 참고했습니다.
+                    디자인 사용에 대한 허가를 받았으며, 지속적으로 업데이트할 계획입니다.
                 </div>
                 <ul className="grid grid-cols-5 nanum-square">
                     <li className="col-span-2 mb-5">

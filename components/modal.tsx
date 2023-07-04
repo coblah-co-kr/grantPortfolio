@@ -21,6 +21,7 @@ import { gitactionModal } from "./modalTypes/gitaction";
 import { jiraModal } from "./modalTypes/jira";
 import { slackModal } from "./modalTypes/slack";
 import { figmaModal } from "./modalTypes/figma";
+import { vercelModal } from "./modalTypes/vercel";
 
 interface ModalInterface {
     imgDescription : string
@@ -66,6 +67,8 @@ class ModalPrinter {
                 return new gitactionModal().getContent();
             case "jenkins":
                 return new jenkinsModal().getContent();
+            case "vercel":
+                return new vercelModal().getContent();
             case "jira":
                 return new jiraModal().getContent();
             case "slack":
