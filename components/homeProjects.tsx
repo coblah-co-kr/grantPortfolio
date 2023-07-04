@@ -292,7 +292,7 @@ export default function HomeProjects () {
             setRuftkeksImageIndex
         ),
         new noticelogScript(
-            "공시록 <2023.01~2023.03>",
+            "공시록 <2022.12~2023.03>",
             "실시간 공시 알림 서비스",
             noticelogImageList,
             noticelogImageIndex,
