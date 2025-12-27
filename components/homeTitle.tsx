@@ -24,29 +24,28 @@ class titleShell extends htmlShell {
     }
     title() {
         return (
-            <div className="hansans text-5xl">
+            <div className="hansans text-5xl mb-3">
                 김용균
             </div>
         );
     }
     title2() {
         return (
-            <div className="hansans text-5xl mb-10">
-                포트폴리오
+            <div className="hansans text-3xl mb-10 text-slate-300">
+                Backend Engineer
             </div>
         );
     }
     comment() {
         return (
-            <div className="kargugsu text-2xl">
-                안녕하세요
+            <div className="kargugsu text-xl">
             </div>
         );
     }
     comment2() {
         return (
-            <div className="kargugsu text-2xl">
-                연구원으로 커리어를 시작하여 웹 개발을 공부하고있습니다.
+            <div className="kargugsu text-xl">
+                안정적인 시스템을 팀과 함께 만들어가고싶습니다.
             </div>
         );
     }

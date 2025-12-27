@@ -3,15 +3,11 @@ import { ReactElement, useState } from "react";
 import { htmlShell } from "./htmlShell";
 
 class projectShell extends htmlShell {
-    private portfolio : portfolioScript;
-    private ruftkeks : ruftkeksScript;
-    private noticelog : noticelogScript;
-    
-    constructor(themeCode:string, frameCode:string, portfolio:portfolioScript, ruftkeks:ruftkeksScript, noticelog:noticelogScript) {
+    private projects: projectScript[];
+
+    constructor(themeCode:string, frameCode:string, projects: projectScript[]) {
         super(themeCode, frameCode);
-        this.noticelog = noticelog;
-        this.portfolio = portfolio;
-        this.ruftkeks = ruftkeks;
+        this.projects = projects;
     }
 
     getContent() {
@@ -26,9 +22,9 @@ class projectShell extends htmlShell {
             <div className={this.frameCode}>
                 {this.title()}
                 <div className="flex flex-col mb-20 gap-y-10">
-                    {this.portfolio.getScript()}
-                    {this.ruftkeks.getScript()}
-                    {this.noticelog.getScript()}
+                    {this.projects.map((project, index) => (
+                        <div key={index}>{project.getScript()}</div>
+                    ))}
                 </div>
             </div>
         );
@@ -123,6 +119,101 @@ abstract class projectScript {
     };
 }
 
+class liargameScript extends projectScript {
+    constructor(titleName:string, subTitleName:string, imageList: Array<string>, imageIndex : number, setImageIndex : Function) {
+        super(titleName, subTitleName, imageList, imageIndex, setImageIndex);
+    }
+
+    setProjectDescription() {
+        return (
+            <>
+                <div className="text-sm mb-5">
+                    친구들과 실시간으로 즐기는 멀티플레이어 게임 플랫폼입니다.<br/>
+                    라이어 게임, 카드 게임, 룰렛 등을 지원합니다.
+                </div>
+                <ul className="grid grid-cols-5 nanum-square">
+                    <li className="col-span-2 mb-5">
+                        팀 구성 및 <p className="underline decoration-2 decoration-grantCareer">역할</p>
+                    </li>
+                    <li className="col-span-3">
+                        <a className="underline decoration-2 decoration-grantCareer">1인 풀스택 개발</a>
+                    </li>
+                    <li className="col-span-2 row-span-4 mt-8">
+                        내용
+                    </li>
+                    <li className="col-span-3">
+                        Next.js 기반 프론트엔드 개발
+                    </li>
+                    <li className="col-span-3">
+                        FastAPI + PostgreSQL 백엔드 구축
+                    </li>
+                    <li className="col-span-3">
+                        실시간 멀티플레이어 게임 로직 구현
+                    </li>
+                    <li className="col-span-3">
+                        Prometheus/Grafana 모니터링, GitActions CI/CD
+                    </li>
+                    <li className="col-span-2 mt-5">
+                        성과
+                    </li>
+                    <li className="col-span-3 flex flex-row justify-center mt-1">
+                        <Link href="https://liars-room.com" className="rounded-lg bg-grantCareer text-white px-4 py-2 font-bold hover:opacity-80">
+                            liars-room.com
+                        </Link>
+                    </li>
+                </ul>
+            </>
+        );
+    }
+}
+
+class weddingScript extends projectScript {
+    constructor(titleName:string, subTitleName:string, imageList: Array<string>, imageIndex : number, setImageIndex : Function) {
+        super(titleName, subTitleName, imageList, imageIndex, setImageIndex);
+    }
+
+    setProjectDescription() {
+        return (
+            <>
+                <div className="text-sm mb-5">
+                    결혼식을 앞두고 직접 제작한 모바일 청첩장입니다.<br/>
+                    3주간 기획부터 배포까지 완료했습니다.<br/>
+                    버스 대절, 참석 수요조사를 위해 백엔드도 개발했지만,<br/>
+                    결혼식이 성공적으로 끝나 백엔드는 현재 내려두었습니다.
+                </div>
+                <ul className="grid grid-cols-5 nanum-square">
+                    <li className="col-span-2 mb-5">
+                        팀 구성 및 <p className="underline decoration-2 decoration-grantCareer">역할</p>
+                    </li>
+                    <li className="col-span-3">
+                        <a className="underline decoration-2 decoration-grantCareer">1인 프론트 개발</a>
+                    </li>
+                    <li className="col-span-2 row-span-3 mt-8">
+                        내용
+                    </li>
+                    <li className="col-span-3">
+                        Next.js 기반 모바일 최적화 웹
+                    </li>
+                    <li className="col-span-3">
+                        SNS 공유 최적화 (OG 메타데이터)
+                    </li>
+                    <li className="col-span-3">
+                        반응형 디자인 및 인터랙션 구현
+                    </li>
+                    <li className="col-span-2 mt-5">
+                        성과
+                    </li>
+                    <li className="col-span-3 flex flex-row justify-center mt-1">
+                        <Link href="https://grant-lucie-wedding.com" className="rounded-lg bg-grantCareer text-white px-4 py-2 font-bold hover:opacity-80">
+                            grant-lucie-wedding.com
+                        </Link>
+                    </li>
+                </ul>
+            </>
+        );
+    }
+}
+
 class noticelogScript extends projectScript {
     constructor(titleName:string, subTitleName:string, imageList: Array<string>, imageIndex : number, setImageIndex : Function) {
         super(titleName, subTitleName, imageList, imageIndex, setImageIndex);
@@ -173,57 +264,6 @@ class noticelogScript extends projectScript {
         );
     }
 }
-class ruftkeksScript extends projectScript {
-    constructor(titleName:string, subTitleName:string, imageList: Array<string>, imageIndex : number, setImageIndex : Function) {
-        super(titleName, subTitleName, imageList, imageIndex, setImageIndex);
-    }
-
-    setProjectDescription() {
-        return (
-            <>
-                <div className="text-sm mb-5">
-                    오랜 친구들과 추억을 저장하기 위해 블로그를 만들고 있습니다.<br/>
-                    Springboot, Next.js, Redux 등의 기술스택의 향상을 목표로 합니다.<br/>
-                </div>
-                <ul className="grid grid-cols-5 nanum-square">
-                    <li className="col-span-2 mb-5">
-                        팀 구성 및 <a className="underline decoration-2 decoration-grantCareer">역할</a>
-                    </li>
-                    <li className="col-span-3">
-                        <a className="underline decoration-2 decoration-grantCareer">백엔드 개발 1, 프론트 개발 1</a>
-                    </li>
-                    <li className="col-span-2 row-span-1">
-                        내용
-                    </li>
-                    <li className="col-span-3">
-                        커스텀 인증 및 API 개발
-                    </li>
-                    <li className="col-span-2 mt-5">
-                        성과
-                    </li>
-                    <li className="col-span-3 flex flex-row justify-around mt-1">
-                        <figure>
-                            <Link href="https://github.com/coblah-co-kr/ruftkeks_springboot" className="text-xs">
-                                <img src="icons/git.png" alt="" style={{display:"block", margin:"0 auto"}}/>
-                            </Link>
-                            <figcaption>
-                                Springboot(Java)
-                            </figcaption>
-                        </figure>
-                        <figure>
-                            <Link href="https://github.com/coblah-co-kr/ruftkeks_ts_next" className="text-xs">
-                                <img src="icons/git.png" alt="" style={{display:"block", margin:"0 auto"}}/>
-                            </Link>
-                            <figcaption>
-                                NextJs(Typescript)
-                            </figcaption>
-                        </figure>
-                    </li>
-                </ul>
-            </>
-        );
-    }
-}
 
 class portfolioScript extends projectScript {
     constructor(titleName:string, subTitleName:string, imageList: Array<string>, imageIndex : number, setImageIndex : Function) {
@@ -266,38 +306,49 @@ class portfolioScript extends projectScript {
 }
 
 export default function HomeProjects () {
+    const liargameImageList = ["img/liargame/intro.png", "img/liargame/cardgame.png"];
+    const weddingImageList = ["img/wedding/intro.png"];
     const portfolioImageList = ["img/portfolio/intro.png"];
-    const ruftkeksImageList = ["img/ruftkeks/intro.png", "img/ruftkeks/privacyTos.png"];
     const noticelogImageList = ["img/noticelog/released.png", "img/noticelog/intro.png", "img/noticelog/today.png", "img/noticelog/wishList.png", "img/noticelog/calendar.png"];
 
+    const [liargameImageIndex, setLiargameImageIndex] = useState(0);
+    const [weddingImageIndex, setWeddingImageIndex] = useState(0);
     const [portfolioImageIndex, setPortfolioImageIndex] = useState(0);
-    const [ruftkeksImageIndex, setRuftkeksImageIndex] = useState(0);
     const [noticelogImageIndex, setNoticelogImageIndex] = useState(0);
 
     const ps = new projectShell(
         "bg-grantProject text-white snap-start",
         "max-w-[48rem] mx-auto h-auto grid justify-items-center",
-        new portfolioScript(
-            "Portfolio <2023.05~>",
-            "개인 포트폴리오",
-            portfolioImageList,
-            portfolioImageIndex,
-            setPortfolioImageIndex,
-        ),
-        new ruftkeksScript(
-            "결사단 <2023.04~>",
-            "블로그 서비스",
-            ruftkeksImageList,
-            ruftkeksImageIndex,
-            setRuftkeksImageIndex
-        ),
-        new noticelogScript(
-            "공시록 <2022.12~2023.03>",
-            "실시간 공시 알림 서비스",
-            noticelogImageList,
-            noticelogImageIndex,
-            setNoticelogImageIndex
-        )
+        [
+            new liargameScript(
+                "라이어 게임 <2025.12~>",
+                "실시간 멀티플레이어 게임 플랫폼",
+                liargameImageList,
+                liargameImageIndex,
+                setLiargameImageIndex,
+            ),
+            new weddingScript(
+                "모바일 청첩장 <2025.04~2025.05>",
+                "결혼식 모바일 청첩장",
+                weddingImageList,
+                weddingImageIndex,
+                setWeddingImageIndex,
+            ),
+            new portfolioScript(
+                "Portfolio <2023.05~>",
+                "개인 포트폴리오",
+                portfolioImageList,
+                portfolioImageIndex,
+                setPortfolioImageIndex,
+            ),
+            new noticelogScript(
+                "공시록 <2022.12~2023.03>",
+                "실시간 공시 알림 서비스",
+                noticelogImageList,
+                noticelogImageIndex,
+                setNoticelogImageIndex
+            ),
+        ]
     );
 
     return ps.getContent();
