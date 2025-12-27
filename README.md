@@ -38,3 +38,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# Release Notes
+
+```yaml
+version: 2025-12-28
+added:
+  - 사이드 프로젝트 2개(모바일 청첩장, 라이어게임) 추가
+removed:
+  - 기술스택 삭제
+```
